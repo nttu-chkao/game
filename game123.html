@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>lalala</title>
+</head>
+<style>
+	#main{width: 1260px;height: 520px}
+	html {padding:0;height:0px;}
+	body {position: relative;background-image: url("綠島123.jpg"); background-repeat: no-repeat;  margin: 0px; }
+	#animate {background-image: url("小火龍2.png"); width: 100px; height: 100px; position: absolute; background-size:cover}	
+	#abc{background-image:url("綠島燈塔.jpg");width:945px;height: 640px;display:none;position:absolute ;top:0px;left:0px;}
+</style>
+<body onkeydown="eval(event)">
+	<div id="animate"></div>
+	<div id="abc"></div>
+
+	<script>
+		var xbool=false;
+		var ybool=false;
+		function eval(event) {
+			var elem = document.getElementById("animate");
+			var abc = document.getElementById("abc");
+			var x = elem.offsetLeft || 0;
+			var y = elem.offsetTop || 0;
+			var key = event.which || event.keyCode;
+			//console.log(key);
+			//console.log(y);
+			switch(key){
+				case 87:
+				abc.style.display="none";
+				if(y>0)
+				{
+					if (ybool==false)
+					{
+						elem.style.backgroundImage = "url('小火龍4.png')";
+						ybool=true;
+					}
+					else{
+						elem.style.backgroundImage = "url('小火龍5.png')";
+						ybool=false
+					}
+					elem.style.top = (y-20) + 'px';
+				}
+				break;
+
+				case 83:
+				abc.style.display="none";
+				if(y<520)
+				{
+					if (ybool==false)
+					{
+						elem.style.backgroundImage = "url('小火龍2.png')";
+						ybool=true;
+					}
+					else{
+						elem.style.backgroundImage = "url('小火龍3.png')";
+						ybool=false
+					}
+					elem.style.top = (y+20) + 'px';
+				}
+				break;
+
+				case 65:
+				abc.style.display="none";
+				if(x>0){
+					if (xbool==false)
+					{
+						elem.style.backgroundImage = "url('小火龍.png')";
+						xbool=true;
+					}
+					else
+					{
+						elem.style.backgroundImage = "url('小火龍1.png')";
+						xbool=false
+					}
+					elem.style.left = (x-20) + 'px';
+				}
+				break;
+				case 68:
+				abc.style.display="none";
+				if(x<800)
+				{
+					if (xbool==false)
+					{
+						elem.style.backgroundImage = "url('小火龍2.png')";
+						xbool=true;
+					}
+					else{
+						elem.style.backgroundImage = "url('小火龍3.png')";
+						xbool=false
+					}
+					elem.style.left = (x+20) + 'px';
+				}
+				break;
+
+				case 32:
+				if( x>=20 && x<=80 && y>=0 && y<=100)
+					{
+						abc.style.backgroundImage="url('綠島燈塔.jpg')";
+						abc.style.display="block";
+					} 
+					else if(x>=300&&x<=440&&y>=0&&y<=20)
+					{
+						abc.style.backgroundImage="url('樓門岩.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=80&&x<=220&&y>=100&&y<=200)
+					{
+						abc.style.backgroundImage="url('綠島監獄.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=560&&x<=800&&y>=40&&y<=160)
+					{
+						abc.style.backgroundImage="url('牛頭山.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=280&&x<=440&&y>=60&&y<=180)
+					{
+						abc.style.backgroundImage="url('梅花鹿園區.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=200&&x<=400&&y>=260&&y<=400)
+					{
+						abc.style.backgroundImage="url('馬蹄橋.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=460&&x<=540&&y>=140&&y<=180)
+					{
+						abc.style.backgroundImage="url('觀音洞.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=500&&x<=800&&y>=220&&y<=280)
+					{
+						abc.style.backgroundImage="url('睡美人與哈巴狗.jpg')";
+						abc.style.display="block";
+					}
+					else if(x>=420&&x<=520&&y>=360&&y<=520)
+					{
+						abc.style.backgroundImage="url('朝日溫泉.jpg')";
+						abc.style.display="block";
+					}
+					break;
+				}
+			}
+		</script>
+	</body>
+	</html>
